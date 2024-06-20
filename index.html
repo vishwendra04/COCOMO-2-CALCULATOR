@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COCOMO II Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>COCOMO II Calculator</h2>
+  <label for="KDSI">Enter KDSI (Kilo Delivered Source Instructions):</label>
+  <input type="number" id="KDSI" placeholder="Enter KDSI">
+  
+  <label for="rely">Required Software Reliability:</label>
+  <select id="rely">
+    <option value="0.75">Very Low</option>
+    <option value="0.88">Low</option>
+    <option value="1.00">Nominal</option>
+    <option value="1.15">High</option>
+    <option value="1.40">Very High</option>
+  </select>
+  
+  <label for="data">Database Size:</label>
+  <select id="data">
+    <option value="0.94">Low</option>
+    <option value="1.00">Nominal</option>
+    <option value="1.08">High</option>
+    <option value="1.16">Very High</option>
+  </select>
+  
+  <label for="cplx">Product Complexity:</label>
+  <select id="cplx">
+    <option value="0.70">Very Low</option>
+    <option value="0.85">Low</option>
+    <option value="1.00">Nominal</option>
+    <option value="1.15">High</option>
+    <option value="1.30">Very High</option>
+    <option value="1.65">Extra High</option>
+  </select>
+  
+  <label for="developmentMode">Select Development Mode:</label>
+  <select id="developmentMode">
+    <option value="organic">Organic</option>
+    <option value="semidetached">Semi-Detached</option>
+    <option value="embedded">Embedded</option>
+  </select>
+  
+  <button onclick="calculateCOCOMO()">Calculate</button>
+  
+  <h3>Effort Multiplier Table</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Factor</th>
+        <th>Very Low</th>
+        <th>Low</th>
+        <th>Nominal</th>
+        <th>High</th>
+        <th>Very High</th>
+        <th>Extra High</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Required Software Reliability (RELY)</td>
+        <td>0.75</td>
+        <td>0.88</td>
+        <td>1.00</td>
+        <td>1.15</td>
+        <td>1.40</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Database Size (DATA)</td>
+        <td>-</td>
+        <td>-</td>
+        <td>0.94</td>
+        <td>1.00</td>
+        <td>1.08</td>
+        <td>1.16</td>
+      </tr>
+      <tr>
+        <td>Product Complexity (CPLX)</td>
+        <td>0.70</td>
+        <td>0.85</td>
+        <td>1.00</td>
+        <td>1.15</td>
+        <td>1.30</td>
+        <td>1.65</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div id="result"></div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
